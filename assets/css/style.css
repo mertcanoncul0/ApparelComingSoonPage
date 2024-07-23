@@ -85,19 +85,19 @@ button {
 }
 
 .title {
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 600;
   letter-spacing: 17.32px;
-  line-height: 71px;
+  line-height: 60px;
   color: #423a3a;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   max-width: 445px;
 }
 
 .title span {
   color: #ce9898;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: 60px;
+  line-height: 60px;
   letter-spacing: 17.32px;
   font-weight: 300;
 }
@@ -106,7 +106,7 @@ button {
   font-size: 16px;
   line-height: 28px;
   color: #ce9898;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   max-width: 445px;
 }
 
