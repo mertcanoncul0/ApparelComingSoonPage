@@ -1,0 +1,288 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff1f1 0%, #ffffff 100%);
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+button {
+  border: none;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.left {
+  padding: 75px 0 0 165px;
+}
+
+.logo {
+  display: inline-block;
+  margin-bottom: 136px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 17.32px;
+  line-height: 71px;
+  color: #423a3a;
+  margin-bottom: 32px;
+  max-width: 445px;
+}
+
+.title span {
+  color: #ce9898;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: 17.32px;
+  font-weight: 300;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 28px;
+  color: #ce9898;
+  margin-bottom: 40px;
+  max-width: 445px;
+}
+
+.form {
+  margin-bottom: 152px;
+  max-width: 445px;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form.error .form-input {
+  border-color: #f96464;
+}
+
+.form-input {
+  width: 100%;
+  height: 56px;
+  border-radius: 28px;
+  border: 1px solid rgba(206, 152, 152, 0.5);
+  padding: 15px 0 13px 32px;
+  outline: none;
+  font-size: 16px;
+  line-height: 28px;
+  color: #423a3a;
+  margin-bottom: 4px;
+}
+
+.form-input::placeholder {
+  color: #ce9898;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.form-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(180deg, #f8bfbf 0%, #ee8b8b 100%);
+  box-shadow: 0 15px 20px 0 rgba(198, 110, 110, 0.25);
+  width: 100px;
+  height: 56px;
+  border-radius: 28px;
+  cursor: pointer;
+}
+
+.form-button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 56px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 15px 20px 0 rgba(198, 110, 110, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.form-error-icon {
+  display: none;
+}
+
+.form.error .form-error-icon {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 116px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.form-error-message {
+  display: none;
+}
+
+.form.error .form-error-message {
+  display: block;
+  font-size: 13px;
+  color: #f96464;
+  line-height: 28px;
+  margin-left: 10%;
+  text-align: left;
+}
+
+.right {
+  background-image: url("../images/apparel.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 810px;
+  height: 100%;
+}
+
+/* Responsive */
+@media (width <= 1440px) {
+  .right {
+    width: 610px;
+  }
+}
+
+@media (width <= 1024px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    padding: 0;
+    padding-inline: 32px;
+    order: 2;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .right {
+    order: 1;
+    min-height: 380px;
+    width: 100%;
+    margin-block: 57px 32px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 32px;
+    width: 100%;
+  }
+
+  .description {
+    margin-bottom: 12px;
+  }
+}
+
+@media (width <= 425px) {
+  .right {
+    min-height: 250px;
+    margin-block: 57px 64px;
+  }
+
+  .logo {
+    background-color: white;
+    padding: 32px;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 20px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 42px;
+    letter-spacing: 10.83px;
+    margin-bottom: 16px;
+  }
+
+  .title span {
+    font-size: 40px;
+    line-height: 42px;
+    letter-spacing: 10.83px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 32px;
+  }
+}
