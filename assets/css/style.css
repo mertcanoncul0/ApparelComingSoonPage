@@ -279,4 +279,13 @@ button {
     line-height: 22px;
     margin-bottom: 32px;
   }
+
+  .form-input {
+    height: 48px;
+  }
+
+  .form-button {
+    width: 64px;
+    height: 48px;
+  }
 }
